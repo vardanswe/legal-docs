@@ -1,29 +1,199 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - WhoAmI</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>WhoAmI — Support</title>
     <style>
-        body { font-family: -apple-system, sans-serif; text-align: center; padding: 50px 20px; color: #333; }
-        .container { max-width: 500px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h1 { margin-bottom: 10px; }
-        .btn { display: inline-block; background: #007AFF; color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; margin-top: 20px; }
-        .faq { text-align: left; margin-top: 30px; }
+        :root {
+            --bg: #ffffff;
+            --fg: #111827;
+            --muted: #6b7280;
+            --card: #f3f4f6;
+            --border: #e5e7eb;
+            --link: #2563eb;
+            --btn: #111827;
+            --btnFg: #f9fafb;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b1220;
+                --fg: #e5e7eb;
+                --muted: #9ca3af;
+                --card: #0f172a;
+                --border: #1f2937;
+                --link: #60a5fa;
+                --btn: #e5e7eb;
+                --btnFg: #0b1220;
+            }
+        }
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+            Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.55;
+        }
+        header {
+            border-bottom: 1px solid var(--border);
+            background: color-mix(in oklab, var(--bg) 92%, var(--card));
+        }
+        .wrap {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 18px 20px;
+        }
+        nav a {
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 14px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 14px 0 6px;
+        }
+        .meta {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 0 0 18px;
+        }
+        main {
+            padding: 22px 0 56px;
+        }
+        h2 {
+            font-size: 18px;
+            margin: 22px 0 10px;
+        }
+        h3 {
+            font-size: 16px;
+            margin: 16px 0 8px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 10px 18px;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin-top: 14px;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: var(--btn);
+            color: var(--btnFg);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .btn.secondary {
+            background: transparent;
+            color: var(--link);
+            border: 1px solid var(--border);
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+            padding: 18px 0 28px;
+        }
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+            "Liberation Mono", "Courier New", monospace;
+            font-size: 0.95em;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>WhoAmI Support</h1>
-    <p>Need help or found a bug? We're here to assist you with the <strong>WhoAmI</strong> app.</p>
-
-    <a href="mailto:[Your Email Address]" class="btn">Email Support</a>
-
-    <div class="faq">
-        <h3>Common Questions</h3>
-        <p><strong>How do I reset my data?</strong><br>Go to Settings > Reset Data inside the app.</p>
-        <p><strong>Can I change my reminder time?</strong><br>Yes, this is available in the Notifications menu.</p>
+<header>
+    <div class="wrap">
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./privacy.html">Privacy</a>
+            <a href="./support.html" aria-current="page">Support</a>
+        </nav>
+        <h1>Support</h1>
+        <p class="meta">Help and contact information for WhoAmI</p>
     </div>
-</div>
+</header>
+
+<main>
+    <div class="wrap">
+        <div class="card">
+            <p>
+                Need help with WhoAmI? Email us at
+                <a href="mailto:vardan.swe@gmail.com">vardan.swe@gmail.com</a>.
+            </p>
+            <div class="actions">
+                <a class="btn" href="mailto:vardan.swe@gmail.com">Email support</a>
+                <a class="btn secondary" href="./privacy.html">View privacy policy</a>
+            </div>
+        </div>
+
+        <h2>Common issues</h2>
+
+        <h3>I'm not receiving reminders</h3>
+        <ul>
+            <li>Check notification permissions in your device settings.</li>
+            <li>Make sure Focus / Do Not Disturb isn't silencing alerts.</li>
+            <li>On Android, verify the app's notification channel is enabled.</li>
+        </ul>
+
+        <h3>I can't sign in</h3>
+        <ul>
+            <li>Verify you're using the correct email address.</li>
+            <li>Try closing and reopening the app.</li>
+            <li>If the issue persists, email support from your account email.</li>
+        </ul>
+
+        <h3>My data looks wrong or missing</h3>
+        <ul>
+            <li>Confirm you are signed into the correct account.</li>
+            <li>Check your internet connection.</li>
+            <li>Email support with details and the approximate time it happened.</li>
+        </ul>
+
+        <h2>Account and data requests</h2>
+        <p>
+            To request an export or deletion of your account and associated data, email
+            <a href="mailto:vardan.swe@gmail.com">vardan.swe@gmail.com</a> from the email address
+            associated with your account.
+        </p>
+
+        <h2>What to include in your message</h2>
+        <ul>
+            <li>Your account email</li>
+            <li>Device type (iPhone/Android) and OS version</li>
+            <li>App version (if known)</li>
+            <li>Steps to reproduce the issue and screenshots (if possible)</li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <div>
+            Contact: <a href="mailto:vardan.swe@gmail.com">vardan.swe@gmail.com</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
